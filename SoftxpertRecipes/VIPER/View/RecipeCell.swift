@@ -13,7 +13,8 @@ class RecipeCell: UITableViewCell {
     var recipeImageView: UIImageView?
     var recipeNameLabel: UILabel?
     var recipeSourceLabel: UILabel?
-//    var recipeTagsCollectionView: UICollectionView?
+    var recipeTagsCollectionView: UICollectionView?
+    var recipesTags : Array<String> = []
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,12 +38,17 @@ class RecipeCell: UITableViewCell {
         recipeSourceLabel?.font = UIFont(name: "Didot", size: 12)
         recipeSourceLabel?.textColor = UIColor(white: 0.3, alpha: 1)
         
-//        recipeTagsCollectionView = UICollectionView()
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        recipeTagsCollectionView = UICollectionView(frame: CGRect(x: 150, y: 72, width: ((parentBackgroundView?.frame.width)! - 162), height: 60), collectionViewLayout: layout)
+        recipeTagsCollectionView?.register(HealthLabel.self, forCellWithReuseIdentifier: "cell")
+        recipeTagsCollectionView?.backgroundColor = .clear
+        recipeTagsCollectionView?.delegate = self
+        recipeTagsCollectionView?.dataSource = self
         
         parentBackgroundView?.addSubview(recipeImageView!)
         parentBackgroundView?.addSubview(recipeNameLabel!)
         parentBackgroundView?.addSubview(recipeSourceLabel!)
-//        parentBackgroundView?.addSubview(recipeTagsCollectionView!)
+        parentBackgroundView?.addSubview(recipeTagsCollectionView!)
         
         self.contentView.addSubview(parentBackgroundView!)
         
@@ -84,7 +90,42 @@ class RecipeCell: UITableViewCell {
         recipeNameLabel?.frame = CGRect(x: 150, y: 18, width: ((parentBackgroundView?.frame.width)! - 162) , height: 30)
             
         recipeSourceLabel?.frame = CGRect(x: 150, y: 46, width: ((parentBackgroundView?.frame.width)! - 162) , height: 20)
+        
+        recipeTagsCollectionView?.frame = CGRect(x: 150, y: 72, width: ((parentBackgroundView?.frame.width)! - 162), height: 60)
+        
+        
 
     }
+    
+}
+
+
+extension RecipeCell : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        recipesTags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HealthLabel
+        cell.healthLabel?.text = recipesTags[indexPath.row]
+        return cell
+    
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: ( ((recipeTagsCollectionView?.frame.width)! / 2) - 15) , height: 20)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+    
     
 }

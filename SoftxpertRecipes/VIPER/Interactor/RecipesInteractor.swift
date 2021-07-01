@@ -12,22 +12,43 @@ import Alamofire
 protocol AnyInteractor  {
     var presenter : AnyPresenter? {get set}
     
-    func getHits(param : String)
+    func getHits(param : String , filterParam : String?)
+    func getExtraHits(pageUrl : String)
 }
 
 class RecipesInteractor: AnyInteractor {
+    
+    
+   
     var presenter: AnyPresenter?
     
-    func getHits(param : String) {
-
-        AF.request(URls.getRecipesFiltered(param: param))
+    func getExtraHits(pageUrl: String) {
+        AF.request(pageUrl)
                     .validate()
                     .responseDecodable(of: RescipeResponse.self){ (response) in
                     switch response.result {
         
                     case .success(_):
                         guard let recipesData = response.value else {return}
-                        self.presenter?.interactorDidFetchHits(with: .success(recipesData.hits!))
+                        self.presenter?.interactorDidFetchExtraHits(with: .success(recipesData))
+        
+                    case .failure(_):
+                        self.presenter?.interactorDidFetchExtraHits(with: .failure(response.error!))
+                    }
+            }
+
+    }
+    
+    func getHits(param : String , filterParam : String?) {
+
+        AF.request(URls.getRecipesFiltered(param: param , filter: filterParam))
+                    .validate()
+                    .responseDecodable(of: RescipeResponse.self){ (response) in
+                    switch response.result {
+        
+                    case .success(_):
+                        guard let recipesData = response.value else {return}
+                        self.presenter?.interactorDidFetchHits(with: .success(recipesData))
         
                     case .failure(_):
                         self.presenter?.interactorDidFetchHits(with: .failure(response.error!))

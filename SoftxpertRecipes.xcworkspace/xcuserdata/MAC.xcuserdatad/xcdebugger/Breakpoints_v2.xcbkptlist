@@ -14,8 +14,8 @@
             filePath = "SoftxpertRecipes/VIPER/View/RecipeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "init(style:reuseIdentifier:)"
             landmarkType = "7">
          </BreakpointContent>

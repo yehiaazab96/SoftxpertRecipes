@@ -9,6 +9,14 @@ import Foundation
 
 class RescipeResponse: Codable {
     var hits : Array<Hit>?
+    var _links : Link?
+}
+class Link: Codable {
+    var next : Next?
+}
+class Next: Codable {
+    var href : String?
+    var title : String?
 }
 class Hit: Codable {
     var recipe : Recipe?
@@ -21,7 +29,7 @@ class Recipe: Codable {
     var url : String?
     var yield : Int?
     var dietLabels: Array<String>?
-    var healthLables : Array<String>?
+    var healthLabels : Array<String>?
     var cautions : Array<String>?
     var ingredientLines : Array<String>?
     var ingredients : Array<Ingredinet>?
