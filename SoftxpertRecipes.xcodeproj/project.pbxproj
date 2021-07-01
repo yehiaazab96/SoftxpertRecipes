@@ -3,18 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04099BF1268B5B97007C6CB6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04099BF0268B5B97007C6CB6 /* Recipe.swift */; };
 		04275693268B4E1D006ACB5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04275692268B4E1D006ACB5E /* AppDelegate.swift */; };
 		04275695268B4E1D006ACB5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04275694268B4E1D006ACB5E /* SceneDelegate.swift */; };
-		04275697268B4E1D006ACB5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04275696268B4E1D006ACB5E /* ViewController.swift */; };
-		0427569A268B4E1D006ACB5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04275698268B4E1D006ACB5E /* Main.storyboard */; };
 		0427569C268B4E1F006ACB5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0427569B268B4E1F006ACB5E /* Assets.xcassets */; };
 		0427569F268B4E1F006ACB5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0427569D268B4E1F006ACB5E /* LaunchScreen.storyboard */; };
 		042756AA268B4E1F006ACB5E /* SoftxpertRecipesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042756A9268B4E1F006ACB5E /* SoftxpertRecipesTests.swift */; };
 		042756B5268B4E1F006ACB5E /* SoftxpertRecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042756B4268B4E1F006ACB5E /* SoftxpertRecipesUITests.swift */; };
+		042756C3268B4E8C006ACB5E /* SearchRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042756C2268B4E8C006ACB5E /* SearchRecipesViewController.swift */; };
+		042756C6268B541C006ACB5E /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042756C4268B541C006ACB5E /* RecipeCell.swift */; };
+		048A14EF268CA4D50045267D /* RecipesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A14EE268CA4D50045267D /* RecipesRouter.swift */; };
+		048A14F1268CA4F10045267D /* RecipesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A14F0268CA4F10045267D /* RecipesPresenter.swift */; };
+		048A14F3268CA4FF0045267D /* RecipesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A14F2268CA4FF0045267D /* RecipesInteractor.swift */; };
+		048A14F6268CC5130045267D /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A14F5268CC5130045267D /* URLs.swift */; };
+		048A14F9268CC7670045267D /* SpinnerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A14F8268CC7670045267D /* SpinnerExtention.swift */; };
+		36E0BE4E61F5CB61C084F04C /* Pods_SoftxpertRecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F0175320719FF77E3D01AC /* Pods_SoftxpertRecipesTests.framework */; };
+		868E2C358782323C7F99F695 /* Pods_SoftxpertRecipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C391D316345BD293BC9D28 /* Pods_SoftxpertRecipes.framework */; };
+		F6D1AFB5A6D19ACE69EA0CD3 /* Pods_SoftxpertRecipes_SoftxpertRecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 739920259E7D5BA63D9D79B7 /* Pods_SoftxpertRecipes_SoftxpertRecipesUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04099BF0268B5B97007C6CB6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		0427568F268B4E1D006ACB5E /* SoftxpertRecipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoftxpertRecipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04275692268B4E1D006ACB5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04275694268B4E1D006ACB5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04275696268B4E1D006ACB5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04275699268B4E1D006ACB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0427569B268B4E1F006ACB5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0427569E268B4E1F006ACB5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042756A0268B4E1F006ACB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +57,22 @@
 		042756B0268B4E1F006ACB5E /* SoftxpertRecipesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoftxpertRecipesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		042756B4268B4E1F006ACB5E /* SoftxpertRecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftxpertRecipesUITests.swift; sourceTree = "<group>"; };
 		042756B6268B4E1F006ACB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		042756C2268B4E8C006ACB5E /* SearchRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipesViewController.swift; sourceTree = "<group>"; };
+		042756C4268B541C006ACB5E /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		048A14EE268CA4D50045267D /* RecipesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRouter.swift; sourceTree = "<group>"; };
+		048A14F0268CA4F10045267D /* RecipesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesPresenter.swift; sourceTree = "<group>"; };
+		048A14F2268CA4FF0045267D /* RecipesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesInteractor.swift; sourceTree = "<group>"; };
+		048A14F5268CC5130045267D /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		048A14F8268CC7670045267D /* SpinnerExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerExtention.swift; sourceTree = "<group>"; };
+		0507D57A592306418F561AEE /* Pods-SoftxpertRecipes-SoftxpertRecipesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertRecipes-SoftxpertRecipesUITests.debug.xcconfig"; path = "Target Support Files/Pods-SoftxpertRecipes-SoftxpertRecipesUITests/Pods-SoftxpertRecipes-SoftxpertRecipesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		20B2E6919C80823640EF74D5 /* Pods-SoftxpertRecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertRecipesTests.debug.xcconfig"; path = "Target Support Files/Pods-SoftxpertRecipesTests/Pods-SoftxpertRecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FC0243E99FEBD3A7B721785 /* Pods-SoftxpertRecipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertRecipes.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertRecipes/Pods-SoftxpertRecipes.release.xcconfig"; sourceTree = "<group>"; };
+		5CD8EE6F415C06892E8A647F /* Pods-SoftxpertRecipes-SoftxpertRecipesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertRecipes-SoftxpertRecipesUITests.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertRecipes-SoftxpertRecipesUITests/Pods-SoftxpertRecipes-SoftxpertRecipesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		67C391D316345BD293BC9D28 /* Pods_SoftxpertRecipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftxpertRecipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		739920259E7D5BA63D9D79B7 /* Pods_SoftxpertRecipes_SoftxpertRecipesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftxpertRecipes_SoftxpertRecipesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73F0175320719FF77E3D01AC /* Pods_SoftxpertRecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoftxpertRecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2E567757730292D120AC65 /* Pods-SoftxpertRecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertRecipesTests.release.xcconfig"; path = "Target Support Files/Pods-SoftxpertRecipesTests/Pods-SoftxpertRecipesTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEE1EE823FD6B458A2B99FF9 /* Pods-SoftxpertRecipes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoftxpertRecipes.debug.xcconfig"; path = "Target Support Files/Pods-SoftxpertRecipes/Pods-SoftxpertRecipes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				868E2C358782323C7F99F695 /* Pods_SoftxpertRecipes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36E0BE4E61F5CB61C084F04C /* Pods_SoftxpertRecipesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D1AFB5A6D19ACE69EA0CD3 /* Pods_SoftxpertRecipes_SoftxpertRecipesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +110,8 @@
 				042756A8268B4E1F006ACB5E /* SoftxpertRecipesTests */,
 				042756B3268B4E1F006ACB5E /* SoftxpertRecipesUITests */,
 				04275690268B4E1D006ACB5E /* Products */,
+				D1C7F48F46048F18134BC6D0 /* Pods */,
+				F998AA183F5423173F9FE1A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +128,10 @@
 		04275691268B4E1D006ACB5E /* SoftxpertRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				048A14F4268CC4FF0045267D /* Constants */,
+				048A14E8268C9A000045267D /* VIPER */,
 				04275692268B4E1D006ACB5E /* AppDelegate.swift */,
 				04275694268B4E1D006ACB5E /* SceneDelegate.swift */,
-				04275696268B4E1D006ACB5E /* ViewController.swift */,
-				04275698268B4E1D006ACB5E /* Main.storyboard */,
 				0427569B268B4E1F006ACB5E /* Assets.xcassets */,
 				0427569D268B4E1F006ACB5E /* LaunchScreen.storyboard */,
 				042756A0268B4E1F006ACB5E /* Info.plist */,
@@ -128,6 +157,99 @@
 			path = SoftxpertRecipesUITests;
 			sourceTree = "<group>";
 		};
+		048A14E8268C9A000045267D /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				048A14ED268C9BE70045267D /* Router */,
+				048A14EC268C9BE00045267D /* Entity */,
+				048A14EB268C9BD20045267D /* Presenter */,
+				048A14EA268C9BC90045267D /* Interactor */,
+				048A14E9268C9BC00045267D /* View */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		048A14E9268C9BC00045267D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				048A14F7268CC74B0045267D /* view extention */,
+				042756C2268B4E8C006ACB5E /* SearchRecipesViewController.swift */,
+				042756C4268B541C006ACB5E /* RecipeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		048A14EA268C9BC90045267D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				048A14F2268CA4FF0045267D /* RecipesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		048A14EB268C9BD20045267D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				048A14F0268CA4F10045267D /* RecipesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		048A14EC268C9BE00045267D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				04099BF0268B5B97007C6CB6 /* Recipe.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		048A14ED268C9BE70045267D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				048A14EE268CA4D50045267D /* RecipesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		048A14F4268CC4FF0045267D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				048A14F5268CC5130045267D /* URLs.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		048A14F7268CC74B0045267D /* view extention */ = {
+			isa = PBXGroup;
+			children = (
+				048A14F8268CC7670045267D /* SpinnerExtention.swift */,
+			);
+			path = "view extention";
+			sourceTree = "<group>";
+		};
+		D1C7F48F46048F18134BC6D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1EE823FD6B458A2B99FF9 /* Pods-SoftxpertRecipes.debug.xcconfig */,
+				4FC0243E99FEBD3A7B721785 /* Pods-SoftxpertRecipes.release.xcconfig */,
+				0507D57A592306418F561AEE /* Pods-SoftxpertRecipes-SoftxpertRecipesUITests.debug.xcconfig */,
+				5CD8EE6F415C06892E8A647F /* Pods-SoftxpertRecipes-SoftxpertRecipesUITests.release.xcconfig */,
+				20B2E6919C80823640EF74D5 /* Pods-SoftxpertRecipesTests.debug.xcconfig */,
+				BA2E567757730292D120AC65 /* Pods-SoftxpertRecipesTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F998AA183F5423173F9FE1A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67C391D316345BD293BC9D28 /* Pods_SoftxpertRecipes.framework */,
+				739920259E7D5BA63D9D79B7 /* Pods_SoftxpertRecipes_SoftxpertRecipesUITests.framework */,
+				73F0175320719FF77E3D01AC /* Pods_SoftxpertRecipesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042756B9268B4E1F006ACB5E /* Build configuration list for PBXNativeTarget "SoftxpertRecipes" */;
 			buildPhases = (
+				DACFBA3E8803A9400DCFB925 /* [CP] Check Pods Manifest.lock */,
 				0427568B268B4E1D006ACB5E /* Sources */,
 				0427568C268B4E1D006ACB5E /* Frameworks */,
 				0427568D268B4E1D006ACB5E /* Resources */,
+				D805BBBBF5B7573D75B87262 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +276,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042756BC268B4E1F006ACB5E /* Build configuration list for PBXNativeTarget "SoftxpertRecipesTests" */;
 			buildPhases = (
+				8987A23E724747D54852C75B /* [CP] Check Pods Manifest.lock */,
 				042756A1268B4E1F006ACB5E /* Sources */,
 				042756A2268B4E1F006ACB5E /* Frameworks */,
 				042756A3268B4E1F006ACB5E /* Resources */,
@@ -170,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042756BF268B4E1F006ACB5E /* Build configuration list for PBXNativeTarget "SoftxpertRecipesUITests" */;
 			buildPhases = (
+				FE4B5769739856FD2CB1AF9C /* [CP] Check Pods Manifest.lock */,
 				042756AC268B4E1F006ACB5E /* Sources */,
 				042756AD268B4E1F006ACB5E /* Frameworks */,
 				042756AE268B4E1F006ACB5E /* Resources */,
+				2C6227549D7FAA9A3460045A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +360,6 @@
 			files = (
 				0427569F268B4E1F006ACB5E /* LaunchScreen.storyboard in Resources */,
 				0427569C268B4E1F006ACB5E /* Assets.xcassets in Resources */,
-				0427569A268B4E1D006ACB5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +379,124 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C6227549D7FAA9A3460045A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoftxpertRecipes-SoftxpertRecipesUITests/Pods-SoftxpertRecipes-SoftxpertRecipesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoftxpertRecipes-SoftxpertRecipesUITests/Pods-SoftxpertRecipes-SoftxpertRecipesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoftxpertRecipes-SoftxpertRecipesUITests/Pods-SoftxpertRecipes-SoftxpertRecipesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8987A23E724747D54852C75B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoftxpertRecipesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D805BBBBF5B7573D75B87262 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoftxpertRecipes/Pods-SoftxpertRecipes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoftxpertRecipes/Pods-SoftxpertRecipes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoftxpertRecipes/Pods-SoftxpertRecipes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DACFBA3E8803A9400DCFB925 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoftxpertRecipes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE4B5769739856FD2CB1AF9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoftxpertRecipes-SoftxpertRecipesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0427568B268B4E1D006ACB5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04275697268B4E1D006ACB5E /* ViewController.swift in Sources */,
+				048A14F3268CA4FF0045267D /* RecipesInteractor.swift in Sources */,
+				048A14F6268CC5130045267D /* URLs.swift in Sources */,
+				042756C3268B4E8C006ACB5E /* SearchRecipesViewController.swift in Sources */,
 				04275693268B4E1D006ACB5E /* AppDelegate.swift in Sources */,
+				048A14F9268CC7670045267D /* SpinnerExtention.swift in Sources */,
 				04275695268B4E1D006ACB5E /* SceneDelegate.swift in Sources */,
+				042756C6268B541C006ACB5E /* RecipeCell.swift in Sources */,
+				048A14F1268CA4F10045267D /* RecipesPresenter.swift in Sources */,
+				048A14EF268CA4D50045267D /* RecipesRouter.swift in Sources */,
+				04099BF1268B5B97007C6CB6 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +532,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04275698268B4E1D006ACB5E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04275699268B4E1D006ACB5E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0427569D268B4E1F006ACB5E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,12 +661,14 @@
 		};
 		042756BA268B4E1F006ACB5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE1EE823FD6B458A2B99FF9 /* Pods-SoftxpertRecipes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7W7ANJ44W4;
 				INFOPLIST_FILE = SoftxpertRecipes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,12 +682,14 @@
 		};
 		042756BB268B4E1F006ACB5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FC0243E99FEBD3A7B721785 /* Pods-SoftxpertRecipes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7W7ANJ44W4;
 				INFOPLIST_FILE = SoftxpertRecipes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,6 +703,7 @@
 		};
 		042756BD268B4E1F006ACB5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20B2E6919C80823640EF74D5 /* Pods-SoftxpertRecipesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +726,7 @@
 		};
 		042756BE268B4E1F006ACB5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA2E567757730292D120AC65 /* Pods-SoftxpertRecipesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +749,7 @@
 		};
 		042756C0268B4E1F006ACB5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0507D57A592306418F561AEE /* Pods-SoftxpertRecipes-SoftxpertRecipesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +770,7 @@
 		};
 		042756C1268B4E1F006ACB5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CD8EE6F415C06892E8A647F /* Pods-SoftxpertRecipes-SoftxpertRecipesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
