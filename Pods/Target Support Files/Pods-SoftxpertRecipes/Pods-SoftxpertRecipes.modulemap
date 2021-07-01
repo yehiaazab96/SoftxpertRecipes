@@ -1,0 +1,6 @@
+framework module Pods_SoftxpertRecipes {
+  umbrella header "Pods-SoftxpertRecipes-umbrella.h"
+
+  export *
+  module * { export * }
+}
