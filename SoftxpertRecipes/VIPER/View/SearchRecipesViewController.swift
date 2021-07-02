@@ -118,6 +118,12 @@ extension SearchRecipesViewController : UITableViewDelegate , UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 174
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipeDetailsVC = RecipeDetailsViewContoller()
+        recipeDetailsVC.recipe = hits[indexPath.row].recipe
+        self.show(recipeDetailsVC, sender: self)
+    }
 }
 
 
