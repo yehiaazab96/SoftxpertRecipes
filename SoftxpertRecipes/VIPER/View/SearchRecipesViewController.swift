@@ -41,21 +41,22 @@ class SearchRecipesViewController: UIViewController , AnyView {
     
     func update(with hits: [Hit]) {
         DispatchQueue.main.async {
-            print(hits)
             self.hits = hits
             self.recipesTableView?.reloadData()
             self.stopSpinner()
+            if hits.count == 0 {
+                self.showAlert(title: "No Result", message: "There are no recipes matching the search keyword")
+            }
         }
     }
     
     func update(with error: String) {
-        print(error)
         stopSpinner()
+        self.showAlert(title: "Something Went Wrong", message: error)
     }
     
     func addExtraHits(with hits: [Hit]) {
         DispatchQueue.main.async {
-            print(hits)
             hits.forEach { hit in
                 self.hits.append(hit)
             }
