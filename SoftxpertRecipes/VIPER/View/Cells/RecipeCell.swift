@@ -107,7 +107,7 @@ extension RecipeCell : UICollectionViewDelegate , UICollectionViewDataSource , U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HealthLabel
-        cell.healthLabel?.text = recipesTags[indexPath.row]
+            cell.healthLabel?.text = recipesTags[indexPath.row]
         return cell
     
     }

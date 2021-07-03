@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import iOSDropDown
 
 protocol AnyView {
     var presenter : AnyPresenter? {get set}
@@ -29,6 +30,7 @@ class SearchRecipesViewController: UIViewController , AnyView {
     var veganButton : UIButton?
     var ketoButton : UIButton?
     var hits : Array<Hit> = []
+    var  dropDown : DropDown?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,16 +81,15 @@ class SearchRecipesViewController: UIViewController , AnyView {
         default:
             break
         }
-        }
+    }
     
     func filterBySelectedFilter(filter : String?){
         if let lastParam = UserDefaults.standard.string(forKey: "LastParam"){
             print(lastParam)
             self.presenter?.interactor?.getHits(param: lastParam, filterParam: filter)
             showSpinner()
+        }
     }
-    }
-    
 }
 
 
@@ -127,85 +128,39 @@ extension SearchRecipesViewController : UITableViewDelegate , UITableViewDataSou
     }
 }
 
-
-extension SearchRecipesViewController {
-    func setupUI() {
-        self.view.backgroundColor = .white
-
-        let searchBarFrame = CGRect(x: 12 , y: 40, width: (view.frame.width - 24), height: 50)
-        recipesSearchBar = UISearchBar(frame: searchBarFrame)
-        recipesSearchBar?.delegate = self
-        recipesSearchBar?.keyboardType = .alphabet
-        self.view.addSubview(recipesSearchBar!)
-     
-        
-        let recipesFilterViewFrame = CGRect(x: 12, y: 102, width: (view.frame.width - 24), height: 60)
-        recipesFilterView = UIStackView(frame: recipesFilterViewFrame)
-        recipesFilterView?.axis = .horizontal
-        recipesFilterView?.alignment = .center
-        recipesFilterView?.distribution = .fillEqually
-        recipesFilterView?.spacing = 20
-        self.view.addSubview(recipesFilterView!)
-     
-        allButton = UIButton()
-        allButton?.setTitle("All", for: .normal)
-        allButton?.backgroundColor = UIColor(red: 0, green: (100 / 365), blue: 0, alpha: 0.85)
-        allButton?.layer.cornerRadius = 5
-        allButton?.titleLabel?.adjustsFontSizeToFitWidth = true
-        allButton?.titleEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        allButton?.addTarget(self, action: #selector(filterButtonPressed(sender:)), for: .touchUpInside)
-        
-        
-        lowSugarButton = UIButton()
-        lowSugarButton?.setTitle("Low Sugar", for: .normal)
-        lowSugarButton?.backgroundColor = UIColor(red: 0, green: (100 / 365), blue: 0, alpha: 0.85)
-        lowSugarButton?.layer.cornerRadius = 5
-        lowSugarButton?.titleLabel?.adjustsFontSizeToFitWidth = true
-        lowSugarButton?.titleEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        lowSugarButton?.addTarget(self, action: #selector(filterButtonPressed(sender:)), for: .touchUpInside)
-        
-        
-        ketoButton = UIButton()
-        ketoButton?.setTitle("Keto", for: .normal)
-        ketoButton?.backgroundColor = UIColor(red: 0, green: (100 / 365), blue: 0, alpha: 0.85)
-        ketoButton?.layer.cornerRadius = 5
-        ketoButton?.titleLabel?.adjustsFontSizeToFitWidth = true
-        ketoButton?.titleEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        ketoButton?.addTarget(self, action: #selector(filterButtonPressed(sender:)), for: .touchUpInside)
-        
-        
-        veganButton = UIButton()
-        veganButton?.setTitle("Vegan", for: .normal)
-        veganButton?.backgroundColor = UIColor(red: 0, green: (100 / 365), blue: 0, alpha: 0.85)
-        veganButton?.layer.cornerRadius = 5
-        veganButton?.titleLabel?.adjustsFontSizeToFitWidth = true
-        veganButton?.titleEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        veganButton?.addTarget(self, action: #selector(filterButtonPressed(sender:)), for: .touchUpInside)
-        
-        
-        recipesFilterView?.addArrangedSubview(allButton!)
-        recipesFilterView?.addArrangedSubview(lowSugarButton!)
-        recipesFilterView?.addArrangedSubview(ketoButton!)
-        recipesFilterView?.addArrangedSubview(veganButton!)
-        
-        
-        let recipesTableViewFrame = CGRect(x: 0, y: 174, width: (view.frame.width), height: (view.frame.height - 186))
-        recipesTableView = UITableView(frame: recipesTableViewFrame, style: .plain)
-        recipesTableView?.separatorStyle = .none
-        recipesTableView!.delegate = self
-        recipesTableView!.dataSource = self
-        recipesTableView?.register( RecipeCell.self, forCellReuseIdentifier: "RecipeCell")
-        self.view.addSubview(recipesTableView!)
-    }
-}
-
 extension SearchRecipesViewController : UISearchBarDelegate{
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        dropDown?.isHidden = false
+        dropDown?.text = ""
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dropDown?.isHidden = true
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        dropDown?.isHidden = true
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !searchBar.text!.trimmingCharacters(in: .whitespaces).isEmpty{
             let searchParam = searchBar.text!.replacingOccurrences(of: " ", with: "%20")
             self.presenter?.interactorGotSearchParam(param: searchParam)
             recipesSearchBar?.resignFirstResponder()
             UserDefaults.standard.setValue(searchParam, forKey: "LastParam")
+            if var lastSearchArray = UserDefaults.standard.stringArray(forKey: "LastSearchArray"){
+                if !lastSearchArray.contains(searchParam){
+                    if lastSearchArray.count > 10 {
+                        lastSearchArray.remove(at: 0)
+                        lastSearchArray.append(searchParam)
+                        UserDefaults.standard.setValue(lastSearchArray, forKey: "LastSearchArray")
+                        self.dropDown?.optionArray = lastSearchArray
+                    }else{
+                        lastSearchArray.append(searchParam)
+                        UserDefaults.standard.setValue(lastSearchArray, forKey: "LastSearchArray")
+                        self.dropDown?.optionArray = lastSearchArray
+                    }
+                }
+            }else{
+                UserDefaults.standard.setValue([searchParam], forKey: "LastSearchArray")
+            }
             self.showSpinner()
         }
     }
